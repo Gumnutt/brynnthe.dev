@@ -7,9 +7,12 @@ html, body{
   color: var(--accent-color);
   font-family: 'Open Sans', sans-serif;
   font-size:24px;
+  overflow-x: hidden;
 }
 .scroll-container{
-  scroll-snap-type: y mandatory;
-  overflow: scroll;
-  height: 100vh;
+  @media(min-width: 900px){
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+  }
 }

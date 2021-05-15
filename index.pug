@@ -6,7 +6,7 @@ head
   title Brynn Briedis
   link(rel='preconnect' href='https://fonts.gstatic.com')
   link(href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap' rel='stylesheet')
-  link(rel='stylesheet' href='styles.css')
+  link(rel='stylesheet' href='dist/styles.css')
 .scroll-container
   .screen.home-screen
     .text-container
@@ -32,4 +32,20 @@ head
           | After spending many hours constructing images out of box-shadows I decieded there must be a better way. Long story short there was, and boxwow is it.
       picture
         source(srcset='img/boxwow.png' type='image/png')
-        img(src='img/boxwow.png' alt='Boxwow screen')
+        img(src='img/boxwow.png' alt='Boxwow screen', data-image-format = "portrait")
+  .screen.work-screen
+    .screen--heading
+      h2 recent work
+    .screen--subheading
+      h3 DOTA2 webapp
+      h4
+        a(href='ecstatic-chandrasekhar-df428d.netlify.app/') ecstatic-chandrasekhar-df428d.netlify.app
+    .screen--info
+      .text-container
+        p
+          | Recently I’ve been teaching myself vuejs. This is an on going project based on the popular video gmae DOTA 2.
+        p
+          | The application uses firestore as its database and several other open source APIs.
+      picture
+        source(srcset='img/dota.png' type='image/png')
+        img(src='img/dota.png' alt='DOTA2 webapp screen', data-image-format = "landscape")

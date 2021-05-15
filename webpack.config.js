@@ -16,7 +16,7 @@ module.exports = {
     chunkFilename: '[name].[chunkhash].chunk.js',
     // Where the CSS is saved to
     path: path.resolve(__dirname, 'dist'),
-    publicPath: "/dist"
+    clean: true,
   },
 
   resolve: {
@@ -65,7 +65,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.pug',
       filename: 'index.html',
-      inject: false,
+      inject: 'head',
     }),
   ]
 }

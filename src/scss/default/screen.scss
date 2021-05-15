@@ -2,18 +2,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
   width: 100vw;
+  height: 100%;
   padding: 2rem;
-  scroll-snap-align: start;
+  @media(min-width: 900px){
+    height: 100vh;
+    scroll-snap-align: start;
+  }
   @media(min-width: 1500px){
     padding: 2rem 8rem;
   }
   .screen--heading, .screen--subheading{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
+    @media(min-width: 900px){
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
   }
   .screen--subheading{
     margin-top: 2.5rem;
@@ -22,7 +29,9 @@
   .text-container{
     max-width: 30rem;
     width: 100%;
-    margin-right: 2rem;
+    @media(min-width: 900px){
+      margin-right: 2rem;
+    }
   }
   .home-image{
     max-height: 100vh;
@@ -34,6 +43,40 @@
     }
   }
 }
+.home-screen{
+  flex-wrap: wrap;
+  justify-content: center;
+  @media(min-width: 900px){
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  picture{
+    order: 1;
+    margin-left: -40vw;
+    @media(min-width: 900px){
+      order: 2;
+      margin-left: 0;
+    }
+    img{
+      width: 130%;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      mix-blend-mode: lighten;
+      @media(min-width: 900px){
+        height: 100%;
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+  .text-container{
+    order: 2;
+    @media(min-width: 900px){
+      order: 1;
+    }
+  }
+}
 .work-screen{
   justify-content: start;
   flex-wrap: wrap;
@@ -42,11 +85,35 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media(min-width: 900px){
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
   picture{
+    width: 100%;
     img{
-      max-height: 600px;
-      height: 100%;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      @media(min-width: 900px){
+        margin-left: 0;
+        margin-right: 0;
+      }
+      &[data-image-format = "portrait"]{
+        width: 100vw;
+        @media(min-width: 900px){
+          width: auto;
+          max-height: 600px;
+          height: 100%;
+        }
+      }
+      &[data-image-format = "landscape"]{
+        width: 100vw;
+        @media(min-width: 900px){
+          max-width: 800px;
+        }
+      }
     }
   }
 }
