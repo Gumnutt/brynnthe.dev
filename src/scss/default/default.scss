@@ -1,0 +1,15 @@
+*{
+  box-sizing: border-box;
+}
+html, body{
+  margin: 0;
+  background: var(--primary-color);
+  color: var(--accent-color);
+  font-family: 'Open Sans', sans-serif;
+  font-size:24px;
+}
+.scroll-container{
+  scroll-snap-type: y mandatory;
+  overflow: scroll;
+  height: 100vh;
+}
